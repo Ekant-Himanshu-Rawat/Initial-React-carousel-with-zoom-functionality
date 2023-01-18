@@ -1,29 +1,21 @@
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+import React from "react";
+import Grid from "@mui/material/Grid";
+import ImageCarouselZoom from "./components/ImageCarouselZoom";
+import { Container } from "@mui/material";
+export default function App() {
+  const imagesData = [
+    "https://placeimg.com/640/480/any/1",
+    "https://placeimg.com/640/480/any/2",
+    "https://placeimg.com/640/480/any/3"
+  ]
+        
+    return (
+      <Container maxWidth='lg' sx={{mt:9}}>
+        <Grid container spacing={4}>
+          <Grid item xs={3}>
+              <ImageCarouselZoom data={imagesData}/>
+          </Grid> 
+        </Grid>
+      </Container>
+    ); 
 }
-
-export default App;
